@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+
+  abp_host:
+    image: abp/mvc
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Staging"
+      ConnectionStrings__Default: "Server=sql_server2022; Database=StudentIntegrityDb; User Id=SA; Password=A&VeryComplex123Password;TrustServerCertificate=True;MultipleActiveResultSets=true;"
+      TZ: "America/Toronto"
+      Kestrel__Endpoints__Http__Url: "http://+:80"
+    ports:
+      - "44312:80"
+    volumes:
+      - "./Mvc-Logs:/app/App_Data/Logs"
+    restart: always
+  sql:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    container_name: sql_server2022
+    ports: # not actually needed, because the two services are on the same network.
+      - "1433:1433" 
+    environment:
+      - ACCEPT_EULA=y
+      - SA_PASSWORD=A&VeryComplex123Password
