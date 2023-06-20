@@ -6,7 +6,7 @@ services:
     image: abp/mvc
     environment:
       ASPNETCORE_ENVIRONMENT: "Staging"
-      ConnectionStrings__Default: "Server=172.20.0.3; Database=StudentIntegrityDb; User Id=SA; Password=A&VeryComplex123Password;TrustServerCertificate=True;MultipleActiveResultSets=true;"
+      ConnectionStrings__Default: "Server=172.20.0.3,1433; Database=StudentIntegrityDb; User Id=SA; Password=A&VeryComplex123Password;TrustServerCertificate=True;MultipleActiveResultSets=true;"
       TZ: "America/Toronto"
       Kestrel__Endpoints__Http__Url: "http://+:80"
     ports:
