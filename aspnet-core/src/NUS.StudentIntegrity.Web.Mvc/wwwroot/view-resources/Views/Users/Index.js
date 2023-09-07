@@ -39,19 +39,19 @@
             },
             {
                 targets: 2,
-                data: 'fullName',
-                sortable: false
-            },
-            {
-                targets: 3,
                 data: 'emailAddress',
                 sortable: false
             },
             {
+                targets: 3,
+                data: 'fullName',
+                sortable: false
+            },
+            {
                 targets: 4,
-                data: 'isActive',
+                data: 'fullName',
                 sortable: false,
-                render: data => `<input type="checkbox" disabled ${data ? 'checked' : ''}>`
+                //render: data => `<input type="checkbox" disabled ${data ? 'checked' : ''}>`
             },
             {
                 targets: 5,
@@ -61,9 +61,9 @@
                 defaultContent: '',
                 render: (data, type, row, meta) => {
                     return [
-                        `   <button type="button" class="btn btn-sm bg-secondary edit-user" data-user-id="${row.id}" data-toggle="modal" data-target="#UserEditModal">`,
-                        `       <i class="fas fa-pencil-alt"></i> ${l('Edit')}`,
-                        '   </button>',
+                        //`   <button type="button" class="btn btn-sm bg-secondary edit-user" data-user-id="${row.id}" data-toggle="modal" data-target="#UserEditModal">`,
+                        //`       <i class="fas fa-pencil-alt"></i> ${l('Edit')}`,
+                        //'   </button>',
                         `   <button type="button" class="btn btn-sm bg-danger delete-user" data-user-id="${row.id}" data-user-name="${row.name}">`,
                         `       <i class="fas fa-trash"></i> ${l('Delete')}`,
                         '   </button>'
@@ -176,4 +176,23 @@
             return false;
         }
     });
+
+    $(document).ready(function () {
+        $("#nextStep").click(function () {
+            debugger;
+            $("#UserCreateModal").modal("hide");
+            $("#step2").modal("show");
+        });
+
+        $("#prevStep").click(function () {
+            $("#step2").modal("hide");
+         
+            $("#UserCreateModal").modal("show");
+        });
+
+        $("#submit").click(function () {
+            // Perform form submission logic here
+        });
+    });
+
 })(jQuery);

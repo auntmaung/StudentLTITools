@@ -15,37 +15,67 @@
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="tab" role="tab" href="#create-user-details">@L("UserDetails")</a>
                         </li>
-                        <li class="nav-item">
+                       @*  <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" role="tab" href="#create-user-roles">@L("UserRoles")</a>
-                        </li>
+                        </li> *@
                     </ul>
                     <div class="tab-content mt-4">
                         <div role="tabpanel" class="tab-pane container active" id="create-user-details">
                             <div class="form-group row required">
-                                <label class="col-md-3 col-form-label">@L("UserName")</label>
+                                    @* <label class="col-md-3 col-form-label">@L("UserName")</label> *@
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="UserName" required maxlength="@AbpUserBase.MaxUserNameLength" minlength="2">
+                                    <label><input type="radio" name="userBy" value="email"> Email Address</label>
+                                    <label><input type="radio" name="userBy" value="LoginId"> Login ID</label>
+                                    <label><input type="radio" name="userBy" value="sisID"> SIS ID</label>
+                                   @*  <input type="text" class="form-control" name="UserName" required maxlength="@AbpUserBase.MaxUserNameLength" minlength="2"> *@
                                 </div>
                             </div>
                             <div class="form-group row required">
-                                <label class="col-md-3 col-form-label">@L("Name")</label>
+                                Email Addresses(required)
+                               @*  <label class="col-md-3 col-form-label">@L("Name")</label>
                                 <div class="col-md-9">
                                     <input type="text" class="form-control" name="Name" required maxlength="@AbpUserBase.MaxNameLength">
-                                </div>
+                                </div> *@
                             </div>
                             <div class="form-group row required">
-                                <label class="col-md-3 col-form-label">@L("Surname")</label>
+                               @*  <label class="col-md-3 col-form-label">@L("Surname")</label> *@
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="Surname" required maxlength="@AbpUserBase.MaxSurnameLength">
+                                    <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+                                    @* <input type="text" multiple="" class="form-control" name="Surname" required maxlength="@AbpUserBase.MaxSurnameLength"> *@
                                 </div>
                             </div>
                             <div class="form-group row required">
-                                <label class="col-md-3 col-form-label">@L("EmailAddress")</label>
+                               
                                 <div class="col-md-9">
-                                    <input type="email" class="form-control" name="EmailAddress" required maxlength="@AbpUserBase.MaxEmailAddressLength">
+                                    <label class="col-md-3 ">Role</label> <label class="col-md-3 ">Section</label>
                                 </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="btn-group" role="group" aria-label="Dropdowns">
+                                                <div class="dropdown">
+                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                        Guest Student
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <!-- Dropdown items here -->
+                                                    </div>
+                                                </div>
+                                                <div class="dropdown">
+                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                        Section 1
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <!-- Dropdown items here -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
-                            <div class="form-group row required">
+                            @*<div class="form-group row required">
                                 <label class="col-md-3 col-form-label">@L("Password")</label>
                                 <div class="col-md-9">
                                     <input type="password" class="form-control" name="Password" id="Password" required maxlength="@AbpUserBase.MaxPlainPasswordLength">
@@ -56,15 +86,15 @@
                                 <div class="col-md-9">
                                     <input type="password" class="form-control" name="ConfirmPassword" id="ConfirmPassword" required maxlength="@AbpUserBase.MaxPlainPasswordLength">
                                 </div>
-                            </div>
+                            </div> *@
                             <div class="form-group row">
-                                <label class="col-md-3 col-form-label" for="CreateUserIsActive">@L("IsActive")</label>
+                                @* <label class="col-md-3 col-form-label" for="CreateUserIsActive">@L("IsActive")</label> *@
                                 <div class="col-md-9">
-                                    <input type="checkbox" name="IsActive" value="true" id="CreateUserIsActive" checked />
+                                    <input type="checkbox" name="IsActive" value="true" id="CreateUserIsActive" checked /> Can Interact with users in their section only
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane container" id="create-user-roles">
+                       @*  <div role="tabpanel" class="tab-pane container" id="create-user-roles">
                             <div class="row">
                                 @foreach (var role in Model.Roles)
                                 {
@@ -74,8 +104,12 @@
                                     </div>
                                 }
                             </div>
-                        </div>
+                        </div> *@
                     </div>
+                   @*  <a href="javascript:;" data-toggle="modal" data-target="#step2" class="btn bg-blue float-sm-right">
+                        <i class="fa fa-plus-square"></i>
+                        @L("save")
+                    </a> *@
                 </div>
                 @await Html.PartialAsync("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
             </form>

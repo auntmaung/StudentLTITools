@@ -53,5 +53,6 @@ namespace NUS.StudentIntegrity.Authorization.Accounts
                 CanLogin = user.IsActive && (user.IsEmailConfirmed || !isEmailConfirmationRequiredForLogin)
             };
         }
+   
     }
 }

@@ -31,7 +31,7 @@
     <text name="CreateNewTenant" value="Create new tenant" />
     <text name="AdminEmailAddress" value="Admin email address" />
     <text name="AdminPassword" value="Admin password" />
-    <text name="Save" value="Save" />
+    <text name="Save" value="Next" />
     <text name="Cancel" value="Cancel" />
     <text name="TenantName_Regex_Description" value="Tenant name must be at least 2 chars, starts with a letter and continue with letter, number, dash or underscore." />
     <text name="DefaultPasswordIs" value="Default password is {0}" />
@@ -44,10 +44,11 @@
     <text name="Logout" value="Logout" />
     <text name="RegisterFormUserNameInvalidMessage">Please don't enter an email address for username.</text>
     <text name="DatabaseConnectionString" value="Database connection string" />
-    <text name="Users" value="Users" />
+    <text name="Users" value="Students" />
     <text name="IsActive" value="Is active" />
-    <text name="FullName" value="Full name" />
-    <text name="CreateNewUser" value="Create new user" />
+    <text name="FullName" value="SIS ID" />
+	  <text name="LoginID" value="Login ID" />
+    <text name="CreateNewUser" value="Add Student" />
     <text name="Yes" value="Yes" />
     <text name="No" value="No" />
     <text name="Optional" value="Optional" />
@@ -83,8 +84,8 @@
     <text name="Permissions">Permissions</text>
     <text name="RoleDescription">Role description</text>
     <text name="Refresh">Refresh</text>
-    <text name="Create">Create</text>
-    <text name="UserDetails">User details</text>
+    <text name="Create">Add Student</text>
+    <text name="UserDetails">Add User(s) by</text>
     <text name="UserRoles">User roles</text>
     <text name="ConfirmPassword">Confirm password</text>
     <text name="Version">Version</text>
