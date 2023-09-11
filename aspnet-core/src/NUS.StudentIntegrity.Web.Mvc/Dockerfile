@@ -5,7 +5,7 @@ RUN ln -s ~/.dotnet/tools/libman /usr/local/bin/libman
 
 WORKDIR /src
 COPY ["/NUS.StudentIntegrity.Web.Mvc.csproj", "src/NUS.StudentIntegrity.Web.Mvc/"]
-COPY ["NUS.StudentIntegrity.Web.Core/NUS.StudentIntegrity.Web.Core.csproj", "src/NUS.StudentIntegrity.Web.Core/"]
+COPY ["../NUS.StudentIntegrity.Web.Core/NUS.StudentIntegrity.Web.Core.csproj", "src/NUS.StudentIntegrity.Web.Core/"]
 COPY ["src/NUS.StudentIntegrity.Application/NUS.StudentIntegrity.Application.csproj", "src/NUS.StudentIntegrity.Application/"]
 COPY ["src/NUS.StudentIntegrity.Core/NUS.StudentIntegrity.Core.csproj", "src/NUS.StudentIntegrity.Core/"]
 COPY ["src/NUS.StudentIntegrity.EntityFrameworkCore/NUS.StudentIntegrity.EntityFrameworkCore.csproj", "src/NUS.StudentIntegrity.EntityFrameworkCore/"]
