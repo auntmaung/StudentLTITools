@@ -21,6 +21,7 @@ using NUS.StudentIntegrity.Web.Models;
 using static NUS.StudentIntegrity.Web.Models.Constants;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using static System.Collections.Specialized.BitVector32;
+using NUS.StudentIntegrity.Controllers;
 //using StudentInnovationPortal.Data;
 //using StudentInnovationPortal.Models;
 //using StudentInnovationPortal.Pages;
@@ -30,7 +31,7 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace NUS.StudentIntegrity.Web.Controllers
 {
-    public class CanvasLtiController : Controller
+    public class CanvasLtiController : StudentIntegrityControllerBase
     {
 
        // private readonly ProviderContext _context;
